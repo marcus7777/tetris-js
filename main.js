@@ -15,7 +15,9 @@ window.onload = function() {
     const deltaTime = time - lastTime;
 
     player.draw();
-    player.updateTimer(deltaTime, callback);
+    if (document.hasFocus()) {
+      player.updateTimer(deltaTime, callback);
+    }
 
     lastTime = time;
     requestAnimationFrame(update);
